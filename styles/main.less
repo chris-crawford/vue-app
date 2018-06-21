@@ -1,0 +1,36 @@
+// out: main.css, compress: true, strictMath: true
+
+body {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  color: @text-color;
+
+  .container {
+    margin: 20px 0px 0px 0px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    .element-container {
+      margin: 20px 0px 0px 0px;
+    }
+  }
+}
+
+a {
+ 	color: @link-color;
+	text-decoration: none;
+
+  &:hover {
+    color: @link-hover-color;
+    text-decoration: none;
+  }
+}
+
+@import "_variables.less";
+@import "_mixins.less";
+@import "../app/header/header.less";
+@import "../app/products/products.less";
+@import "../app/books/books.less";
+@import "../app/books/books-3d.less";
+@import "../app/kendo/kendo.less";

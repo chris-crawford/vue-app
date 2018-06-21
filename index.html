@@ -1,0 +1,66 @@
+<html lang="en">
+<head>
+  <title>Papyr</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="/styles/main.css">
+  <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2017.3.913/styles/kendo.common.min.css"/>
+  <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2017.3.913/styles/kendo.default.min.css"/>
+</head>
+<body>
+  <header id="header">
+    <component v-bind:is="component">
+      <!-- this is dynamic -->
+    </component>
+  </header>
+
+  <section id="content" role="main">
+    <component v-bind:is="component">
+      <!-- this is dynamic -->
+    </component>
+  </section>
+
+
+  <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.6.15/browser-polyfill.min.js"></script>
+  <script src="https://kendo.cdn.telerik.com/2017.3.913/js/kendo.all.min.js"></script>
+  <!-- <script src="node_modules/@progress/kendo-ui/js/kendo.all.js"></script> -->
+  <!-- Kendo UI Components -->
+  <script src="https://unpkg.com/@progress/kendo-dateinputs-vue-wrapper/dist/cdn/kendo-dateinputs-vue-wrapper.min.js"></script>
+  <script src="https://unpkg.com/@progress/kendo-buttons-vue-wrapper/dist/cdn/kendo-buttons-vue-wrapper.js"></script>
+  <script src="https://unpkg.com/@progress/kendo-barcodes-vue-wrapper/dist/cdn/kendo-barcodes-vue-wrapper.js"></script>
+
+  <script src="node_modules/vue/dist/vue.js"></script>
+  <script src="node_modules/page/page.js"></script>
+  <script src="node_modules/polyn/release/polyn.js"></script>
+  <script src="node_modules/hilary/release/hilary.js"></script>
+  <script src="node_modules/hilary/release/hilary-browser-module-shim.js"></script>
+
+  <script src="app/layout-content/content-vue.js"></script>
+  <script src="app/layout-content/loading-component.js"></script>
+
+  <script src="app/header/header-component.js"></script>
+  <script src="app/header/header-vue.js"></script>
+
+  <script src="app/home/home-component.js"></script>
+  <script src="app/home/home-controller.js"></script>
+
+  <script src="app/books/Book.js"></script>
+  <script src="app/books/book-component.js"></script>
+  <script src="app/books/books-controller.js"></script>
+
+  <script src="app/products/Product.js"></script>
+  <script src="app/products/product-component.js"></script>
+  <script src="app/products/products-component.js"></script>
+  <script src="app/products/products-controller.js"></script>
+  <script src="app/products/products-repository.js"></script>
+
+  <script src="app/kendo/kendo-page-component.js"></script>
+  <script src="app/kendo/kendo-page-controller.js"></script>
+
+  <script src="app/query-string.js"></script>
+  <script src="app/router.js"></script>
+  <script src="app/app.js"></script>
+</body>
+</html>
