@@ -1,13 +1,18 @@
 module.exports = {
   scope: 'papyr',
   name: 'kendo-page-controller',
-  dependencies: ['page', 'content-vue'],
-  factory: (page, content) => {
+  dependencies: ['page', 'query-string', 'content-vue', 'kendo-page-component', 'kendo-page-repository'],
+  factory: (page, queryString, content, kendoPageComponent, kendoRepo) => {
     'use strict'
 
     const registerRoutes = () => {
-      page('/kendo', () => {
-        content.component = 'kendo-page'
+      page('/kendo', (context) => {
+        const qs = queryString.parse(context.queryString);
+        kendoRepo.find(qs.q)
+          .then((kendoMetadata) => {
+            kendoPageComponent.setKendoMetadata(kendoMetadata);
+            content.component = 'kendo-page';
+          })
       })
     }
 

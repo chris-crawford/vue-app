@@ -12,7 +12,8 @@ module.exports = {
 			calendarMetadata: {
 				selectedDate: new Date(),
 				currentView: ''
-			}
+			},
+			kendoMetadata: []
 		}
 
 		// kendo manipulation methods
@@ -25,6 +26,9 @@ module.exports = {
 		}
 		const onDateChange = (e) => {
 			state.calendarMetadata.selectedDate = e.sender.current();
+		}
+		const setKendoMetadata = (metadata) => {
+			state.kendoMetadata = (JSON.parse(metadata));
 		}
 
 		const component = Vue.component('kendo-page', {
@@ -57,8 +61,17 @@ module.exports = {
 						</div>
 
 						<div>
-							
+							<ul>
+								<li v-for="meta in kendoMetadata">
+									{{meta.firstName}}
+									{{meta.lastName}}
+									{{meta.gender}}
+								</li>
+							</ul>
 						</div>
+
+
+
 					</div>
 
 				</div>
@@ -67,6 +80,6 @@ module.exports = {
 			methods: { incrementCount, onNavigate, onDateChange }
 		})
 
-		return Object.freeze({ name: 'kendo-page', component })
+		return Object.freeze({ name: 'kendo-page', component, setKendoMetadata })
 	}
 }
