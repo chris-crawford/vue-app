@@ -1,8 +1,8 @@
 module.exports = {
   scope: 'papyr',
   name: 'home-component',
-  dependencies: ['Vue', 'kendo'],
-  factory: (Vue, kendo) => {
+  dependencies: ['Vue'],
+  factory: (Vue) => {
     'use strict'
 
     const state = {
@@ -15,7 +15,6 @@ module.exports = {
         <div class="component home-component">
           <h1>{{heading}}</h1>
           <div>{{body}}</div>
-          <kendo-calendar :value="new Date()" ></kendo-calendar>
         </div>
       `,
       data: () => state

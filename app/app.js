@@ -18,6 +18,7 @@
       console.log('startup::papyr::composing application')
       scope.resolve('header-vue')       // bind the header
       scope.resolve('content-vue')      // bind the main content
+      scope.resolve('configuration-wrapper')
       scope.resolve(/controller/i).forEach((controller) => {
         if (controller && typeof controller.registerRoutes === 'function') {
           controller.registerRoutes()   // resolve controllers to register routes
